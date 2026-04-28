@@ -1,148 +1,238 @@
-<!DOCTYPE html>                                                                                            
-  <html lang="en">                                                                                           
-  <head>                                                                                                     
-  <meta charset="UTF-8">                                                                                     
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow">
-  <title>Touch Recorder — Legal</title>                                                                      
+  <meta name="description" content="Touch Recorder by J&amp;H Apps — official legal documents, privacy policy, terms of service, and support contact for the Android touch automation app.">
+  <meta name="theme-color" content="#1f6feb">
+
+  <title>Touch Recorder — Legal &amp; Support</title>
+
+  <link rel="icon" type="image/png" sizes="512x512" href="play_store_512.png">
+  <link rel="apple-touch-icon" href="play_store_512.png">
+  <link rel="canonical" href="https://jhapps.github.io/touch-recorder/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Touch Recorder — Legal &amp; Support">
+  <meta property="og:description" content="Privacy policy, terms of service, and support contact for the Touch Recorder Android app by J&amp;H Apps.">
+  <meta property="og:image" content="https://jhapps.github.io/touch-recorder/play_store_512.png">
+  <meta property="og:url" content="https://jhapps.github.io/touch-recorder/">
+  <meta property="og:site_name" content="Touch Recorder">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Touch Recorder — Legal &amp; Support">
+  <meta name="twitter:description" content="Privacy policy, terms of service, and support contact for Touch Recorder.">
+  <meta name="twitter:image" content="https://jhapps.github.io/touch-recorder/play_store_512.png">
+
   <style>
-    :root {                                                                                                  
-      --bg: #0f1115;                                                                                         
+    :root {
+      --bg: #0f1115;
       --card: #1a1d24;
-      --text: #e6e8eb;                                                                                       
-      --muted: #8a91a0;                                                                                      
+      --card-hover: #20242d;
+      --text: #e6e8eb;
+      --muted: #8a91a0;
       --accent: #4f8cff;
-      --border: #262a33;                                                                                     
-    }                                                       
-    @media (prefers-color-scheme: light) {                                                                   
-      :root {                                                                                                
-        --bg: #f5f6f8;
-        --card: #ffffff;                                                                                     
-        --text: #1a1d24;                                    
-        --muted: #5a6270;                                                                                    
-        --accent: #1f6feb;
-        --border: #e1e4e8;                                                                                   
-      }                                                                                                      
+      --accent-hover: #6ea1ff;
+      --border: #262a33;
+      --play-bg: #01875f;
+      --play-bg-hover: #019971;
     }
-    * { box-sizing: border-box; }                                                                            
-    body {                                                  
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f5f6f8;
+        --card: #ffffff;
+        --card-hover: #f9fafb;
+        --text: #1a1d24;
+        --muted: #5a6270;
+        --accent: #1f6feb;
+        --accent-hover: #1858c4;
+        --border: #e1e4e8;
+        --play-bg: #01875f;
+        --play-bg-hover: #019971;
+      }
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
-  sans-serif;                                                                                                
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       background: var(--bg);
-      color: var(--text);                                                                                    
-      min-height: 100vh;                                    
-      display: flex;                                                                                         
-      align-items: center;                                  
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
       justify-content: center;
       padding: 1.5rem;
-      line-height: 1.5;                                                                                      
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
     }
-    main {                                                                                                   
-      width: 100%;                                          
+    main {
+      width: 100%;
       max-width: 480px;
-    }                                                                                                        
+    }
     header {
-      text-align: center;                                                                                    
-      margin-bottom: 2rem;                                  
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .app-icon {
+      width: 84px;
+      height: 84px;
+      border-radius: 20px;
+      margin: 0 auto 1rem;
+      display: block;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
     }
     header h1 {
       margin: 0 0 0.4rem;
-      font-size: 1.6rem;                                                                                     
+      font-size: 1.65rem;
       letter-spacing: -0.01em;
-    }                                                                                                        
-    header p {                                              
-      margin: 0;                                                                                             
+    }
+    header p {
+      margin: 0;
       color: var(--muted);
-      font-size: 0.95rem;                                                                                    
-    }                                                       
+      font-size: 0.95rem;
+    }
+
+    .play-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      width: 100%;
+      padding: 0.95rem 1.25rem;
+      margin-bottom: 1.5rem;
+      background: var(--play-bg);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.01em;
+      transition: background 0.12s ease, transform 0.12s ease;
+    }
+    .play-cta:hover,
+    .play-cta:focus-visible {
+      background: var(--play-bg-hover);
+      transform: translateY(-1px);
+      outline: none;
+    }
+    .play-cta svg {
+      flex: 0 0 auto;
+    }
+
     .links {
       display: grid;
       gap: 0.75rem;
-    }                                                                                                        
+    }
     .link-card {
-      display: flex;                                                                                         
-      align-items: center;                                  
+      display: flex;
+      align-items: center;
       justify-content: space-between;
+      gap: 0.75rem;
       padding: 1.1rem 1.25rem;
-      background: var(--card);                                                                               
+      background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 12px;                                                                                   
-      text-decoration: none;                                
+      border-radius: 12px;
+      text-decoration: none;
       color: var(--text);
-      transition: transform 0.12s ease, border-color 0.12s ease;                                             
+      transition: background 0.12s ease, border-color 0.12s ease, transform 0.12s ease;
     }
-    .link-card:hover,                                                                                        
-    .link-card:focus-visible {                              
-      border-color: var(--accent);                                                                           
+    .link-card:hover,
+    .link-card:focus-visible {
+      background: var(--card-hover);
+      border-color: var(--accent);
       transform: translateY(-1px);
-      outline: none;                                                                                         
-    }                                                       
-    .link-card .label {
-      display: flex;                                                                                         
-      flex-direction: column;
-    }                                                                                                        
-    .link-card .label strong {                              
-      font-size: 1rem;                                                                                       
-      font-weight: 600;
-    }                                                                                                        
-    .link-card .label span {                                
-      font-size: 0.85rem;
-      color: var(--muted);                                                                                   
+      outline: none;
     }
-    .link-card .arrow {                                                                                      
-      color: var(--accent);                                 
-      font-size: 1.2rem;
-    }                                                                                                        
+    .link-card .label {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+    .link-card .label strong {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    .link-card .label span {
+      font-size: 0.85rem;
+      color: var(--muted);
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .link-card .arrow {
+      color: var(--accent);
+      font-size: 1.3rem;
+      flex: 0 0 auto;
+      line-height: 1;
+    }
+
     footer {
-      margin-top: 2.5rem;                                                                                    
-      text-align: center;                                   
+      margin-top: 2.5rem;
+      text-align: center;
       color: var(--muted);
       font-size: 0.8rem;
-    }                                                                                                        
-    footer a {
-      color: var(--muted);                                                                                   
-      text-decoration: underline;                           
     }
-  </style>                                                                                                   
-  </head>
-  <body>                                                                                                     
-  <main>                                                    
-    <header>
-      <h1>Touch Recorder</h1>
-      <p>Legal documents and contact</p>
-    </header>                                                                                                
-  
-    <nav class="links">                                                                                      
-      <a class="link-card" href="privacy.html">             
-        <span class="label">
-          <strong>Privacy Policy</strong>                                                                    
-          <span>How we handle your data</span>
-        </span>                                                                                              
-        <span class="arrow" aria-hidden="true">&rsaquo;</span>
-      </a>                                                                                                   
-      <a class="link-card" href="terms.html">
-        <span class="label">                                                                                 
-          <strong>Terms of Service</strong>                                                                  
-          <span>Rules for using the app</span>
-        </span>                                                                                              
-        <span class="arrow" aria-hidden="true">&rsaquo;</span>                                               
-      </a>
-      <a class="link-card" href="mailto:jhapps.touchrepeat@gmail.com">                                       
-        <span class="label">                                                                                 
-          <strong>Contact Support</strong>
-          <span>jhapps.touchrepeat@gmail.com</span>                                                          
-        </span>                                             
-        <span class="arrow" aria-hidden="true">&rsaquo;</span>                                               
-      </a>                                                                                                   
-    </nav>
-                                                                                                             
-    <footer>                                                
-      &copy; <span id="year">2026</span> J&amp;H Apps. All rights reserved.
-    </footer>                                                                                                
-  </main>
-  <script>                                                                                                   
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>                                                                                                  
-  </body>
-  </html>  
+    footer a {
+      color: var(--muted);
+      text-decoration: underline;
+    }
+    .updated {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <img src="play_store_512.png" alt="Touch Recorder app icon" class="app-icon" width="84" height="84" loading="eager" decoding="async">
+    <h1>Touch Recorder</h1>
+    <p>Legal documents and support</p>
+  </header>
+
+  <a class="play-cta"
+     href="https://play.google.com/store/apps/details?id=com.jhapps.touchrepeat"
+     target="_blank" rel="noopener">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="22" viewBox="0 0 20 22" aria-hidden="true">
+      <path fill="#FFFFFF" d="M0.5 1.2v19.6c0 0.4 0.2 0.7 0.5 0.9l11.1-10.7L1 0.3C0.7 0.5 0.5 0.8 0.5 1.2zM14.6 8.2L3.4 1.7l9.7 9.3L14.6 8.2zM18.7 9.6L15.6 7.8 13.7 11l1.9 3.2 3.1-1.8C19.7 12 19.7 10 18.7 9.6zM3.4 20.3l11.2-6.5-1.5-1.8L3.4 20.3z"/>
+    </svg>
+    <span>Get it on Google Play</span>
+  </a>
+
+  <nav class="links" aria-label="Legal and support links">
+    <a class="link-card" href="privacy.html">
+      <span class="label">
+        <strong>Privacy Policy</strong>
+        <span>How we handle your data</span>
+      </span>
+      <span class="arrow" aria-hidden="true">&rsaquo;</span>
+    </a>
+    <a class="link-card" href="terms.html">
+      <span class="label">
+        <strong>Terms of Service</strong>
+        <span>Rules for using the app</span>
+      </span>
+      <span class="arrow" aria-hidden="true">&rsaquo;</span>
+    </a>
+    <a class="link-card" href="mailto:jhapps.touchrepeat@gmail.com">
+      <span class="label">
+        <strong>Contact Support</strong>
+        <span>jhapps.touchrepeat@gmail.com</span>
+      </span>
+      <span class="arrow" aria-hidden="true">&rsaquo;</span>
+    </a>
+  </nav>
+
+  <footer>
+    &copy; <span id="year">2026</span> J&amp;H Apps. All rights reserved.
+    <span class="updated">Effective date: April 28, 2026</span>
+  </footer>
+</main>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
