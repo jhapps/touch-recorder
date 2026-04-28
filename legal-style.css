@@ -48,9 +48,16 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* Hide Termly's default header logo (the giant SVG block) — replaced by our navbar */
-body > span[style*="data:image/svg+xml"],
-body > div > span[style*="data:image/svg+xml"]:first-child {
+/* Hide Termly's default header logo (giant SVG block at top of doc) — replaced by our navbar */
+body span[style*="data:image/svg+xml"],
+.tr-container span[style*="data:image/svg+xml"],
+.tr-container > span:first-child,
+.tr-container > div:first-child > span[style*="background"]:first-child {
+  display: none !important;
+}
+/* Hide stray <br> elements that Termly emits before/after the logo block */
+.tr-container > br:first-child,
+.tr-container > br + br {
   display: none !important;
 }
 
@@ -126,9 +133,12 @@ body > div > span[style*="data:image/svg+xml"]:first-child {
   }
 }
 
-/* Override Termly's data-custom-class typography */
-[data-custom-class='title'],
-[data-custom-class='title'] * {
+/* Override Termly's data-custom-class typography.
+   Higher specificity (html .tr-container ...) beats Termly's inline <style> at same !important weight. */
+html .tr-container [data-custom-class='title'],
+html .tr-container [data-custom-class='title'] *,
+html body [data-custom-class='title'],
+html body [data-custom-class='title'] * {
   font-family: inherit !important;
   font-size: 2rem !important;
   font-weight: 700 !important;
@@ -137,15 +147,19 @@ body > div > span[style*="data:image/svg+xml"]:first-child {
   line-height: 1.2 !important;
 }
 
-[data-custom-class='subtitle'],
-[data-custom-class='subtitle'] * {
+html .tr-container [data-custom-class='subtitle'],
+html .tr-container [data-custom-class='subtitle'] *,
+html body [data-custom-class='subtitle'],
+html body [data-custom-class='subtitle'] * {
   font-family: inherit !important;
   font-size: 0.9rem !important;
   color: var(--text-muted) !important;
 }
 
-[data-custom-class='heading_1'],
-[data-custom-class='heading_1'] * {
+html .tr-container [data-custom-class='heading_1'],
+html .tr-container [data-custom-class='heading_1'] *,
+html body [data-custom-class='heading_1'],
+html body [data-custom-class='heading_1'] * {
   font-family: inherit !important;
   font-size: 1.4rem !important;
   font-weight: 700 !important;
@@ -154,8 +168,10 @@ body > div > span[style*="data:image/svg+xml"]:first-child {
   line-height: 1.3 !important;
 }
 
-[data-custom-class='heading_2'],
-[data-custom-class='heading_2'] * {
+html .tr-container [data-custom-class='heading_2'],
+html .tr-container [data-custom-class='heading_2'] *,
+html body [data-custom-class='heading_2'],
+html body [data-custom-class='heading_2'] * {
   font-family: inherit !important;
   font-size: 1.15rem !important;
   font-weight: 600 !important;
@@ -163,16 +179,20 @@ body > div > span[style*="data:image/svg+xml"]:first-child {
   line-height: 1.35 !important;
 }
 
-[data-custom-class='body_text'],
-[data-custom-class='body_text'] * {
+html .tr-container [data-custom-class='body_text'],
+html .tr-container [data-custom-class='body_text'] *,
+html body [data-custom-class='body_text'],
+html body [data-custom-class='body_text'] * {
   font-family: inherit !important;
   font-size: 1rem !important;
   color: var(--text) !important;
   line-height: 1.65 !important;
 }
 
-[data-custom-class='link'],
-[data-custom-class='link'] * {
+html .tr-container [data-custom-class='link'],
+html .tr-container [data-custom-class='link'] *,
+html body [data-custom-class='link'],
+html body [data-custom-class='link'] * {
   font-family: inherit !important;
   font-size: inherit !important;
   color: var(--link) !important;
@@ -180,14 +200,36 @@ body > div > span[style*="data:image/svg+xml"]:first-child {
   text-underline-offset: 2px !important;
   word-break: break-word !important;
 }
-[data-custom-class='link']:hover,
-[data-custom-class='link']:hover * {
+html .tr-container [data-custom-class='link']:hover,
+html .tr-container [data-custom-class='link']:hover * {
   color: var(--link-hover) !important;
 }
 
-[data-custom-class='body'],
-[data-custom-class='body'] * {
+html .tr-container [data-custom-class='body'],
+html .tr-container [data-custom-class='body'] *,
+html body [data-custom-class='body'],
+html body [data-custom-class='body'] * {
   background: transparent !important;
+}
+
+/* Default text color for unmarked Termly content (fallback when data-custom-class missing) */
+html .tr-container,
+html .tr-container * {
+  color: var(--text);
+}
+html .tr-container strong,
+html .tr-container b {
+  color: var(--text);
+}
+
+/* Termly inline styles often hardcode color: rgb(89, 89, 89) for body text — override */
+html .tr-container span[style*="color: rgb(89, 89, 89)"],
+html .tr-container span[style*="color: #595959"] {
+  color: var(--text) !important;
+}
+html .tr-container span[style*="color: rgb(0, 0, 0)"],
+html .tr-container span[style*="color: #000000"] {
+  color: var(--text) !important;
 }
 
 /* Tables */
