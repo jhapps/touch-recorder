@@ -1,0 +1,274 @@
+/* Touch Recorder legal documents — shared stylesheet
+   Overrides Termly defaults + adds navbar, container, footer, dark mode. */
+
+:root {
+  --bg: #f5f6f8;
+  --surface: #ffffff;
+  --surface-elev: #fbfcfd;
+  --text: #1a1d24;
+  --text-muted: #5a6270;
+  --link: #1f6feb;
+  --link-hover: #1858c4;
+  --border: #e1e4e8;
+  --accent: #1f6feb;
+  --shadow: 0 2px 12px rgba(15, 17, 21, 0.06);
+  --shadow-lg: 0 12px 32px rgba(15, 17, 21, 0.12);
+  --header-bg: rgba(255, 255, 255, 0.85);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1115;
+    --surface: #1a1d24;
+    --surface-elev: #20242d;
+    --text: #e6e8eb;
+    --text-muted: #8a91a0;
+    --link: #6ea1ff;
+    --link-hover: #8fb6ff;
+    --border: #262a33;
+    --accent: #4f8cff;
+    --shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.5);
+    --header-bg: rgba(15, 17, 21, 0.85);
+  }
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: var(--bg) !important;
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Hide Termly's default header logo (the giant SVG block) — replaced by our navbar */
+body > span[style*="data:image/svg+xml"],
+body > div > span[style*="data:image/svg+xml"]:first-child {
+  display: none !important;
+}
+
+/* Sticky top nav */
+.tr-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 1.25rem;
+  background: var(--header-bg);
+  backdrop-filter: saturate(180%) blur(14px);
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
+  border-bottom: 1px solid var(--border);
+}
+.tr-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: -0.01em;
+}
+.tr-brand img {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  flex: 0 0 auto;
+}
+.tr-brand:hover { color: var(--link); }
+
+.tr-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.5rem 0.9rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text);
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: border-color 0.12s ease, transform 0.12s ease;
+}
+.tr-back:hover {
+  border-color: var(--link);
+  color: var(--link);
+  transform: translateY(-1px);
+}
+
+/* Doc container */
+.tr-container {
+  max-width: 760px;
+  margin: 2rem auto 0;
+  padding: 2rem 1.5rem 4rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+@media (max-width: 640px) {
+  .tr-container {
+    margin-top: 1rem;
+    padding: 1.25rem 1rem 3rem;
+    border-radius: 12px;
+  }
+}
+
+/* Override Termly's data-custom-class typography */
+[data-custom-class='title'],
+[data-custom-class='title'] * {
+  font-family: inherit !important;
+  font-size: 2rem !important;
+  font-weight: 700 !important;
+  color: var(--text) !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.2 !important;
+}
+
+[data-custom-class='subtitle'],
+[data-custom-class='subtitle'] * {
+  font-family: inherit !important;
+  font-size: 0.9rem !important;
+  color: var(--text-muted) !important;
+}
+
+[data-custom-class='heading_1'],
+[data-custom-class='heading_1'] * {
+  font-family: inherit !important;
+  font-size: 1.4rem !important;
+  font-weight: 700 !important;
+  color: var(--text) !important;
+  letter-spacing: -0.01em !important;
+  line-height: 1.3 !important;
+}
+
+[data-custom-class='heading_2'],
+[data-custom-class='heading_2'] * {
+  font-family: inherit !important;
+  font-size: 1.15rem !important;
+  font-weight: 600 !important;
+  color: var(--text) !important;
+  line-height: 1.35 !important;
+}
+
+[data-custom-class='body_text'],
+[data-custom-class='body_text'] * {
+  font-family: inherit !important;
+  font-size: 1rem !important;
+  color: var(--text) !important;
+  line-height: 1.65 !important;
+}
+
+[data-custom-class='link'],
+[data-custom-class='link'] * {
+  font-family: inherit !important;
+  font-size: inherit !important;
+  color: var(--link) !important;
+  text-decoration: underline !important;
+  text-underline-offset: 2px !important;
+  word-break: break-word !important;
+}
+[data-custom-class='link']:hover,
+[data-custom-class='link']:hover * {
+  color: var(--link-hover) !important;
+}
+
+[data-custom-class='body'],
+[data-custom-class='body'] * {
+  background: transparent !important;
+}
+
+/* Tables */
+.tr-container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.25rem 0;
+  font-size: 0.95rem;
+}
+.tr-container th,
+.tr-container td {
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+.tr-container th {
+  background: var(--surface-elev);
+  font-weight: 600;
+}
+
+/* Lists */
+.tr-container ul,
+.tr-container ol {
+  padding-left: 1.5rem;
+}
+.tr-container li {
+  margin-bottom: 0.35rem;
+}
+
+/* Anchor offset for sticky nav */
+[id], [name] {
+  scroll-margin-top: 5rem;
+}
+
+/* Footer */
+.tr-footer {
+  max-width: 760px;
+  margin: 2.5rem auto 3rem;
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+.tr-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem 1rem;
+  margin-bottom: 1rem;
+}
+.tr-footer-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 0.3rem 0.5rem;
+  border-radius: 6px;
+  transition: color 0.12s ease, background 0.12s ease;
+}
+.tr-footer-links a:hover {
+  color: var(--link);
+  background: var(--surface);
+}
+.tr-footer-sep {
+  color: var(--border);
+  user-select: none;
+}
+.tr-footer-copy {
+  font-size: 0.78rem;
+  opacity: 0.85;
+}
+
+/* Print friendly */
+@media print {
+  .tr-navbar, .tr-footer { display: none !important; }
+  .tr-container {
+    max-width: 100%;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+  }
+  body { background: #fff !important; color: #000 !important; }
+}
