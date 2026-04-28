@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jhapps.github.io/touch-recorder/sitemap.xml
