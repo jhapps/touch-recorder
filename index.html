@@ -2,237 +2,498 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="robots" content="index, follow">
-  <meta name="description" content="Touch Recorder by J&amp;H Apps — official legal documents, privacy policy, terms of service, and support contact for the Android touch automation app.">
-  <meta name="theme-color" content="#1f6feb">
+  <meta name="description" content="Touch Recorder — Android auto-tap and macro recorder. Record taps, swipes, gestures and replay them at any speed. No root, no computer needed.">
+  <meta name="theme-color" content="#272727">
+  <meta name="color-scheme" content="dark">
 
-  <title>Touch Recorder — Legal &amp; Support</title>
+  <title>Touch Recorder — Auto-tap &amp; Macro Recorder for Android</title>
 
+  <link rel="stylesheet" href="legal-style.css">
   <link rel="icon" type="image/png" sizes="512x512" href="play_store_512.png">
   <link rel="apple-touch-icon" href="play_store_512.png">
   <link rel="canonical" href="https://jhapps.github.io/touch-recorder/">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Touch Recorder — Legal &amp; Support">
-  <meta property="og:description" content="Privacy policy, terms of service, and support contact for the Touch Recorder Android app by J&amp;H Apps.">
-  <meta property="og:image" content="https://jhapps.github.io/touch-recorder/play_store_512.png">
+  <meta property="og:title" content="Touch Recorder — Auto-tap &amp; Macro Recorder for Android">
+  <meta property="og:description" content="Record taps, swipes, gestures and replay them at any speed. No root, no computer needed.">
+  <meta property="og:image" content="https://jhapps.github.io/touch-recorder/touch-recorder-banner.png">
   <meta property="og:url" content="https://jhapps.github.io/touch-recorder/">
   <meta property="og:site_name" content="Touch Recorder">
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Touch Recorder — Legal &amp; Support">
-  <meta name="twitter:description" content="Privacy policy, terms of service, and support contact for Touch Recorder.">
-  <meta name="twitter:image" content="https://jhapps.github.io/touch-recorder/play_store_512.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Touch Recorder — Auto-tap &amp; Macro Recorder">
+  <meta name="twitter:description" content="Record taps and replay them at any speed. No root, no computer needed.">
+  <meta name="twitter:image" content="https://jhapps.github.io/touch-recorder/touch-recorder-banner.png">
 
-  <style>
-    :root {
-      --bg: #0f1115;
-      --card: #1a1d24;
-      --card-hover: #20242d;
-      --text: #e6e8eb;
-      --muted: #8a91a0;
-      --accent: #4f8cff;
-      --accent-hover: #6ea1ff;
-      --border: #262a33;
-      --play-bg: #01875f;
-      --play-bg-hover: #019971;
-    }
-    @media (prefers-color-scheme: light) {
-      :root {
-        --bg: #f5f6f8;
-        --card: #ffffff;
-        --card-hover: #f9fafb;
-        --text: #1a1d24;
-        --muted: #5a6270;
-        --accent: #1f6feb;
-        --accent-hover: #1858c4;
-        --border: #e1e4e8;
-        --play-bg: #01875f;
-        --play-bg-hover: #019971;
-      }
-    }
-    * { box-sizing: border-box; }
-    html { -webkit-text-size-adjust: 100%; }
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 1.5rem;
-      line-height: 1.5;
-      -webkit-font-smoothing: antialiased;
-    }
-    main {
-      width: 100%;
-      max-width: 480px;
-    }
-    header {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    .app-icon {
-      width: 84px;
-      height: 84px;
-      border-radius: 20px;
-      margin: 0 auto 1rem;
-      display: block;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
-    }
-    header h1 {
-      margin: 0 0 0.4rem;
-      font-size: 1.65rem;
-      letter-spacing: -0.01em;
-    }
-    header p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .play-cta {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.6rem;
-      width: 100%;
-      padding: 0.95rem 1.25rem;
-      margin-bottom: 1.5rem;
-      background: var(--play-bg);
-      color: #fff;
-      text-decoration: none;
-      border-radius: 12px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      letter-spacing: 0.01em;
-      transition: background 0.12s ease, transform 0.12s ease;
-    }
-    .play-cta:hover,
-    .play-cta:focus-visible {
-      background: var(--play-bg-hover);
-      transform: translateY(-1px);
-      outline: none;
-    }
-    .play-cta svg {
-      flex: 0 0 auto;
-    }
-
-    .links {
-      display: grid;
-      gap: 0.75rem;
-    }
-    .link-card {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.75rem;
-      padding: 1.1rem 1.25rem;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      text-decoration: none;
-      color: var(--text);
-      transition: background 0.12s ease, border-color 0.12s ease, transform 0.12s ease;
-    }
-    .link-card:hover,
-    .link-card:focus-visible {
-      background: var(--card-hover);
-      border-color: var(--accent);
-      transform: translateY(-1px);
-      outline: none;
-    }
-    .link-card .label {
-      display: flex;
-      flex-direction: column;
-      min-width: 0;
-    }
-    .link-card .label strong {
-      font-size: 1rem;
-      font-weight: 600;
-    }
-    .link-card .label span {
-      font-size: 0.85rem;
-      color: var(--muted);
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .link-card .arrow {
-      color: var(--accent);
-      font-size: 1.3rem;
-      flex: 0 0 auto;
-      line-height: 1;
-    }
-
-    footer {
-      margin-top: 2.5rem;
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.8rem;
-    }
-    footer a {
-      color: var(--muted);
-      text-decoration: underline;
-    }
-    .updated {
-      display: block;
-      margin-top: 0.5rem;
-      font-size: 0.75rem;
-      color: var(--muted);
-    }
-  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "Touch Recorder",
+    "operatingSystem": "ANDROID",
+    "applicationCategory": "UtilitiesApplication",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "publisher": { "@type": "Organization", "name": "J&H Apps" },
+    "url": "https://jhapps.github.io/touch-recorder/",
+    "downloadUrl": "https://play.google.com/store/apps/details?id=com.jhapps.touchrepeat"
+  }
+  </script>
 </head>
 <body>
-<main>
-  <header>
-    <img src="play_store_512.png" alt="Touch Recorder app icon" class="app-icon" width="84" height="84" loading="eager" decoding="async">
-    <h1>Touch Recorder</h1>
-    <p>Legal documents and support</p>
-  </header>
 
-  <a class="play-cta"
-     href="https://play.google.com/store/apps/details?id=com.jhapps.touchrepeat"
-     target="_blank" rel="noopener">
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="22" viewBox="0 0 20 22" aria-hidden="true">
-      <path fill="#FFFFFF" d="M0.5 1.2v19.6c0 0.4 0.2 0.7 0.5 0.9l11.1-10.7L1 0.3C0.7 0.5 0.5 0.8 0.5 1.2zM14.6 8.2L3.4 1.7l9.7 9.3L14.6 8.2zM18.7 9.6L15.6 7.8 13.7 11l1.9 3.2 3.1-1.8C19.7 12 19.7 10 18.7 9.6zM3.4 20.3l11.2-6.5-1.5-1.8L3.4 20.3z"/>
-    </svg>
-    <span>Get it on Google Play</span>
-  </a>
+<a id="top"></a>
 
-  <nav class="links" aria-label="Legal and support links">
-    <a class="link-card" href="privacy.html">
-      <span class="label">
-        <strong>Privacy Policy</strong>
-        <span>How we handle your data</span>
-      </span>
-      <span class="arrow" aria-hidden="true">&rsaquo;</span>
+<!-- ============================================================
+     App-bar (Material TopAppBar feel). Mobile shows only brand +
+     compact CTA pill; desktop reveals nav links and a wider CTA.
+     ============================================================ -->
+<header class="lp-appbar" role="banner">
+  <div class="lp-appbar-inner">
+    <a class="tr-brand" href="#top" aria-label="Touch Recorder home">
+      <img src="play_store_512.png" alt="" width="30" height="30">
+      <span><span class="tr-brand-blue">Touch</span> <span class="tr-brand-red">Recorder</span></span>
     </a>
-    <a class="link-card" href="terms.html">
-      <span class="label">
-        <strong>Terms of Service</strong>
-        <span>Rules for using the app</span>
-      </span>
-      <span class="arrow" aria-hidden="true">&rsaquo;</span>
+    <nav class="lp-appbar-nav" aria-label="Page sections">
+      <a href="#how">How it works</a>
+      <a href="#features">Features</a>
+      <a href="#premium">Premium</a>
+      <a href="#screens">Screens</a>
+      <a href="#permissions">Permissions</a>
+    </nav>
+    <a class="lp-appbar-cta"
+       href="https://play.google.com/store/apps/details?id=com.jhapps.touchrepeat"
+       target="_blank" rel="noopener">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 22" aria-hidden="true">
+        <path fill="currentColor" d="M0.5 1.2v19.6c0 0.4 0.2 0.7 0.5 0.9l11.1-10.7L1 0.3C0.7 0.5 0.5 0.8 0.5 1.2zM14.6 8.2L3.4 1.7l9.7 9.3L14.6 8.2zM18.7 9.6L15.6 7.8 13.7 11l1.9 3.2 3.1-1.8C19.7 12 19.7 10 18.7 9.6zM3.4 20.3l11.2-6.5-1.5-1.8L3.4 20.3z"/>
+      </svg>
+      Get it on Play
     </a>
-    <a class="link-card" href="mailto:jhapps.touchrepeat@gmail.com">
-      <span class="label">
-        <strong>Contact Support</strong>
-        <span>jhapps.touchrepeat@gmail.com</span>
-      </span>
-      <span class="arrow" aria-hidden="true">&rsaquo;</span>
-    </a>
+  </div>
+</header>
+
+<!-- ============================================================
+     Hero
+     ============================================================ -->
+<section class="lp-hero">
+  <div class="lp-shell">
+    <div class="lp-hero-grid">
+      <div class="lp-hero-copy">
+        <span class="lp-hero-badge">
+          <span class="lp-dot-blue" aria-hidden="true"></span>
+          <span class="lp-dot-red" aria-hidden="true"></span>
+          Touch Recorder · 2026
+        </span>
+        <h1>
+          <span class="lp-blue">Touch</span><br>
+          <span class="lp-red">Recorder.</span>
+        </h1>
+        <p class="lp-hero-tagline">
+          Android auto-tap and macro recorder. Record your taps, swipes, and gestures —
+          replay them as many times as you want, at the speed you choose.
+        </p>
+        <ul class="lp-hero-meta">
+          <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Android 7.0+</li>
+          <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>No root</li>
+          <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>No computer</li>
+        </ul>
+        <div class="lp-hero-ctas">
+          <a class="lp-cta-primary"
+             href="https://play.google.com/store/apps/details?id=com.jhapps.touchrepeat"
+             target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 20 22" aria-hidden="true">
+              <path fill="currentColor" d="M0.5 1.2v19.6c0 0.4 0.2 0.7 0.5 0.9l11.1-10.7L1 0.3C0.7 0.5 0.5 0.8 0.5 1.2zM14.6 8.2L3.4 1.7l9.7 9.3L14.6 8.2zM18.7 9.6L15.6 7.8 13.7 11l1.9 3.2 3.1-1.8C19.7 12 19.7 10 18.7 9.6zM3.4 20.3l11.2-6.5-1.5-1.8L3.4 20.3z"/>
+            </svg>
+            <span>Get it on Google Play</span>
+          </a>
+          <a class="lp-cta-secondary" href="#how">How it works &rsaquo;</a>
+        </div>
+      </div>
+
+      <div class="lp-hero-art" aria-hidden="true">
+        <img src="play_store_512.png"
+             alt=""
+             class="lp-hero-art-img"
+             width="512"
+             height="512"
+             loading="eager"
+             decoding="async">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     Screen strip — horizontal snap-scroll on mobile, 4-col grid on desktop
+     ============================================================ -->
+<section class="lp-section" id="screens">
+  <div class="lp-shell">
+    <div class="lp-section-head">
+      <div class="lp-brand-bar" aria-hidden="true"></div>
+      <span class="lp-eyebrow">Screens</span>
+      <h2>A look inside the app</h2>
+      <p class="lp-section-sub">Swipe through the recorder, the floating controls, and Premium.</p>
+    </div>
+    <div class="lp-shots">
+      <figure class="lp-shot"><img src="touch-recorder-showcase-1.png" alt="Touch Recorder home screen" loading="lazy" decoding="async"></figure>
+      <figure class="lp-shot"><img src="touch-recorder-showcase-2.png" alt="Recording list with saved macros" loading="lazy" decoding="async"></figure>
+      <figure class="lp-shot"><img src="touch-recorder-showcase-3.png" alt="Recording controls and live stats" loading="lazy" decoding="async"></figure>
+      <figure class="lp-shot"><img src="touch-recorder-showcase-4.png" alt="Playback speed and repeat settings" loading="lazy" decoding="async"></figure>
+      <figure class="lp-shot"><img src="touch-recorder-showcase-5.png" alt="Merge recordings into one routine" loading="lazy" decoding="async"></figure>
+      <figure class="lp-shot"><img src="touch-recorder-showcase-6.png" alt="Premium subscription tier with smart stop rules" loading="lazy" decoding="async"></figure>
+      <figure class="lp-shot"><img src="touch-recorder-showcase-7.png" alt="Floating control buttons over another app" loading="lazy" decoding="async"></figure>
+    </div>
+    <p class="lp-shots-hint" aria-hidden="true">SWIPE</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     How it works — 3 steps. Stacked w/ giant numerals on mobile,
+     3-col w/ arrows on desktop.
+     ============================================================ -->
+<section class="lp-section lp-alt" id="how">
+  <div class="lp-shell">
+    <div class="lp-section-head">
+      <div class="lp-brand-bar" aria-hidden="true"></div>
+      <span class="lp-eyebrow">How it works</span>
+      <h2>Record once, replay forever</h2>
+      <p class="lp-section-sub">Three steps. The same loop you see in the icon — record, tweak, replay.</p>
+    </div>
+    <ol class="lp-steps">
+      <li class="lp-step is-blue">
+        <span class="lp-step-num">01</span>
+        <div>
+          <h3>Record</h3>
+          <p>Tap, swipe, drag — anything you can do with one finger. Touch Recorder watches and remembers.</p>
+        </div>
+      </li>
+      <li class="lp-step-arrow" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </li>
+      <li class="lp-step is-mixed">
+        <span class="lp-step-num">02</span>
+        <div>
+          <h3>Tweak</h3>
+          <p>Pick playback speed, repeats, and the wait time between runs. Change any of them mid-playback.</p>
+        </div>
+      </li>
+      <li class="lp-step-arrow" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </li>
+      <li class="lp-step is-red">
+        <span class="lp-step-num">03</span>
+        <div>
+          <h3>Replay</h3>
+          <p>Hit Play. Floating controls stay on top of any app. Play, Stop, or jump back to recording in one tap.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============================================================
+     Features — Play-Store-style list rows on mobile, alternating
+     editorial chapter blocks on desktop with oversized numerals.
+     ============================================================ -->
+<section class="lp-section" id="features">
+  <div class="lp-shell">
+    <div class="lp-section-head">
+      <div class="lp-brand-bar" aria-hidden="true"></div>
+      <span class="lp-eyebrow lp-eyebrow-red">Features</span>
+      <h2>Everything Touch Recorder does</h2>
+    </div>
+    <ol class="lp-features">
+
+      <li class="lp-feature">
+        <span class="lp-feature-num" aria-hidden="true">01</span>
+        <span class="lp-feature-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.5" fill="currentColor"/></svg>
+        </span>
+        <div class="lp-feature-body">
+          <h3>Record any gesture</h3>
+          <p>Taps, swipes, multi-step sequences. Name your recording, pick the playback speed, set the wait between repeats.</p>
+          <ul>
+            <li>Custom name + saved settings</li>
+            <li>Replay exactly as recorded — or change before saving</li>
+            <li>Wait time configurable between repeats</li>
+          </ul>
+        </div>
+        <span class="lp-feature-chev" aria-hidden="true">›</span>
+      </li>
+
+      <li class="lp-feature is-red">
+        <span class="lp-feature-num" aria-hidden="true">02</span>
+        <span class="lp-feature-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3v4l-4 4 4 4v4M16 3v4l4 4-4 4v4M8 11h8M8 15h8"/></svg>
+        </span>
+        <div class="lp-feature-body">
+          <h3>Merge recordings</h3>
+          <p>Stitch several recordings into one routine. Build long sequences from short, simple ones.</p>
+          <ul>
+            <li>Set the order</li>
+            <li>Per-step playback speed</li>
+            <li>Wait time between each step</li>
+          </ul>
+        </div>
+        <span class="lp-feature-chev" aria-hidden="true">›</span>
+      </li>
+
+      <li class="lp-feature">
+        <span class="lp-feature-num" aria-hidden="true">03</span>
+        <span class="lp-feature-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h0a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h0a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v0a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        </span>
+        <div class="lp-feature-body">
+          <h3>Tweak while playing</h3>
+          <p>Change speed or wait time without stopping playback. Effects apply right away — no restart, no flicker.</p>
+          <ul>
+            <li>Live speed adjust during playback</li>
+            <li>Live wait-time adjust</li>
+            <li>No restart, no flicker</li>
+          </ul>
+        </div>
+        <span class="lp-feature-chev" aria-hidden="true">›</span>
+      </li>
+
+      <li class="lp-feature is-red">
+        <span class="lp-feature-num" aria-hidden="true">04</span>
+        <span class="lp-feature-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+        </span>
+        <div class="lp-feature-body">
+          <h3>Floating controls</h3>
+          <p>Play, Stop, Edit, and Switch-to-Record sit on top of any app. Always reachable, small enough to ignore.</p>
+          <ul>
+            <li>Drag anywhere on screen</li>
+            <li>Stay above games, browsers, anything</li>
+            <li>Quick switch back to recording</li>
+          </ul>
+        </div>
+        <span class="lp-feature-chev" aria-hidden="true">›</span>
+      </li>
+
+      <li class="lp-feature">
+        <span class="lp-feature-num" aria-hidden="true">05</span>
+        <span class="lp-feature-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>
+        </span>
+        <div class="lp-feature-body">
+          <h3>Live stats &amp; calculator</h3>
+          <p>See tap count and elapsed time as the recording runs. Built-in calculator estimates how long a routine will take.</p>
+          <ul>
+            <li>Tap count + elapsed time</li>
+            <li>Routine-length estimator</li>
+          </ul>
+        </div>
+        <span class="lp-feature-chev" aria-hidden="true">›</span>
+      </li>
+
+      <li class="lp-feature is-red">
+        <span class="lp-feature-num" aria-hidden="true">06</span>
+        <span class="lp-feature-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </span>
+        <div class="lp-feature-body">
+          <h3>Polished dark mode</h3>
+          <p>Cleaner UI, quick onboarding tour, faster more reliable recording. Rebuilt from the ground up in v2.</p>
+          <ul>
+            <li>Onboarding tour</li>
+            <li>Polished dark theme</li>
+            <li>v2 rewrite — faster, more reliable</li>
+          </ul>
+        </div>
+        <span class="lp-feature-chev" aria-hidden="true">›</span>
+      </li>
+
+    </ol>
+  </div>
+</section>
+
+<!-- ============================================================
+     Premium — gold lives ONLY here
+     ============================================================ -->
+<section class="lp-section lp-alt" id="premium">
+  <div class="lp-shell">
+    <div class="lp-premium">
+      <div class="lp-premium-grid">
+        <div>
+          <span class="lp-premium-eyebrow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.39 7.36H22l-6.18 4.49L18.21 22 12 17.27 5.79 22l2.39-8.15L2 9.36h7.61z"/></svg>
+            Premium
+          </span>
+          <h2>Smart stop rules. Zero ads.</h2>
+          <p>
+            Touch Recorder is free with ads. Upgrade to Premium for smart stop rules
+            that protect your phone — and remove every ad in the app.
+          </p>
+          <div class="lp-premium-tiers">
+            <span class="lp-premium-tier">Weekly</span>
+            <span class="lp-premium-tier">Monthly</span>
+            <span class="lp-premium-tier">Yearly</span>
+          </div>
+          <p class="lp-premium-note">
+            Subscriptions renew through Google Play. Cancel any time in
+            Play Store &rsaquo; Subscriptions.
+          </p>
+        </div>
+        <ul class="lp-premium-list">
+          <li>
+            <span class="lp-premium-check" aria-hidden="true">✓</span>
+            <span>
+              <strong>Stop on low battery</strong>
+              <span>Pick a battery percentage. Playback stops automatically when your battery drops below it.</span>
+            </span>
+          </li>
+          <li>
+            <span class="lp-premium-check" aria-hidden="true">✓</span>
+            <span>
+              <strong>Stop when offline</strong>
+              <span>Playback stops automatically if your phone loses internet.</span>
+            </span>
+          </li>
+          <li>
+            <span class="lp-premium-check" aria-hidden="true">✓</span>
+            <span>
+              <strong>Stop and lock</strong>
+              <span>When a stop rule fires, your phone screen locks too.</span>
+            </span>
+          </li>
+          <li>
+            <span class="lp-premium-check" aria-hidden="true">✓</span>
+            <span>
+              <strong>On-screen status</strong>
+              <span>A small bar shows which stop rules are on and your current battery level.</span>
+            </span>
+          </li>
+          <li>
+            <span class="lp-premium-check" aria-hidden="true">✓</span>
+            <span>
+              <strong>No ads, anywhere</strong>
+              <span>Every banner, interstitial, and rewarded prompt — gone.</span>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     Permissions
+     ============================================================ -->
+<section class="lp-section" id="permissions">
+  <div class="lp-shell">
+    <div class="lp-section-head">
+      <div class="lp-brand-bar" aria-hidden="true"></div>
+      <span class="lp-eyebrow lp-eyebrow-red">Permissions</span>
+      <h2>What we ask for, and why</h2>
+      <p class="lp-section-sub">We don't sell your information. Your recordings stay on your phone.</p>
+    </div>
+    <ul class="lp-perms">
+      <li class="lp-perm">
+        <strong>Accessibility</strong>
+        <span>Lets the app tap the screen for you. Without it, no auto-tap app can work on a phone that is not rooted.</span>
+      </li>
+      <li class="lp-perm is-red">
+        <strong>Display over other apps</strong>
+        <span>So the floating control buttons can sit on top of your game or app.</span>
+      </li>
+      <li class="lp-perm">
+        <strong>Notifications</strong>
+        <span>Shows a small status while a recording is playing, so you always know it is still running.</span>
+      </li>
+      <li class="lp-perm is-gold">
+        <strong>Device Admin <em>(optional)</em></strong>
+        <span>Used only if you turn on "Stop and lock" — locks your screen when a stop rule fires.</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================
+     Use-cases
+     ============================================================ -->
+<section class="lp-section lp-alt" id="uses">
+  <div class="lp-shell">
+    <div class="lp-section-head">
+      <div class="lp-brand-bar" aria-hidden="true"></div>
+      <span class="lp-eyebrow">Great for</span>
+      <h2>Anything you'd rather not tap a hundred times yourself</h2>
+    </div>
+    <ul class="lp-uses">
+      <li class="lp-use">
+        <span class="lp-use-bullet" aria-hidden="true">1</span>
+        <span>Mobile games — daily logins, idle taps, claim buttons, repeat farming.</span>
+      </li>
+      <li class="lp-use">
+        <span class="lp-use-bullet" aria-hidden="true">2</span>
+        <span>Long forms or surveys you have to fill out the same way every time.</span>
+      </li>
+      <li class="lp-use">
+        <span class="lp-use-bullet" aria-hidden="true">3</span>
+        <span>Anyone with limited hand mobility who wants help with repeated taps.</span>
+      </li>
+      <li class="lp-use">
+        <span class="lp-use-bullet" aria-hidden="true">4</span>
+        <span>Any task where the answer is "tap that, then that, then that, again".</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================
+     Final CTA
+     ============================================================ -->
+<section class="lp-section">
+  <div class="lp-shell">
+    <div class="lp-final">
+      <h2>Get <span class="lp-blue">Touch</span> <span class="lp-red">Recorder</span> today</h2>
+      <p>Free, with optional Premium. Android 7.0 and up.</p>
+      <div class="lp-hero-ctas">
+        <a class="lp-cta-primary"
+           href="https://play.google.com/store/apps/details?id=com.jhapps.touchrepeat"
+           target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 20 22" aria-hidden="true">
+            <path fill="currentColor" d="M0.5 1.2v19.6c0 0.4 0.2 0.7 0.5 0.9l11.1-10.7L1 0.3C0.7 0.5 0.5 0.8 0.5 1.2zM14.6 8.2L3.4 1.7l9.7 9.3L14.6 8.2zM18.7 9.6L15.6 7.8 13.7 11l1.9 3.2 3.1-1.8C19.7 12 19.7 10 18.7 9.6zM3.4 20.3l11.2-6.5-1.5-1.8L3.4 20.3z"/>
+          </svg>
+          <span>Get it on Google Play</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="tr-footer" role="contentinfo">
+  <nav class="tr-footer-links" aria-label="Footer">
+    <a href="index.html">Home</a>
+    <span class="tr-footer-sep" aria-hidden="true">&middot;</span>
+    <a href="privacy.html">Privacy Policy</a>
+    <span class="tr-footer-sep" aria-hidden="true">&middot;</span>
+    <a href="terms.html">Terms of Service</a>
+    <span class="tr-footer-sep" aria-hidden="true">&middot;</span>
+    <a href="mailto:jhapps.touchrepeat@gmail.com">Contact</a>
+    <span class="tr-footer-sep" aria-hidden="true">&middot;</span>
+    <a href="https://play.google.com/store/apps/details?id=com.jhapps.touchrepeat" target="_blank" rel="noopener">Google Play</a>
   </nav>
+  <div class="tr-footer-copy">&copy; <span id="tr-year">2026</span> J&amp;H Apps. All rights reserved.</div>
+</footer>
 
-  <footer>
-    &copy; <span id="year">2026</span> J&amp;H Apps. All rights reserved.
-    <span class="updated">Effective date: April 28, 2026</span>
-  </footer>
-</main>
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+<!-- ============================================================
+     Sticky bottom install pill — mobile only. Hidden on desktop.
+     Always-visible primary conversion target.
+     ============================================================ -->
+<a class="lp-install-fab"
+   href="https://play.google.com/store/apps/details?id=com.jhapps.touchrepeat"
+   target="_blank" rel="noopener"
+   aria-label="Install Touch Recorder from Google Play">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 22" aria-hidden="true">
+    <path fill="currentColor" d="M0.5 1.2v19.6c0 0.4 0.2 0.7 0.5 0.9l11.1-10.7L1 0.3C0.7 0.5 0.5 0.8 0.5 1.2zM14.6 8.2L3.4 1.7l9.7 9.3L14.6 8.2zM18.7 9.6L15.6 7.8 13.7 11l1.9 3.2 3.1-1.8C19.7 12 19.7 10 18.7 9.6zM3.4 20.3l11.2-6.5-1.5-1.8L3.4 20.3z"/>
+  </svg>
+  <span>Install free</span>
+  <span class="lp-install-tag">2026</span>
+</a>
+
+<script>document.getElementById("tr-year").textContent=new Date().getFullYear();</script>
 </body>
 </html>

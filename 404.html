@@ -4,26 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#272727">
+  <meta name="color-scheme" content="dark">
   <title>Page not found — Touch Recorder</title>
   <link rel="icon" type="image/png" sizes="512x512" href="/touch-recorder/play_store_512.png">
   <style>
     :root {
-      --bg: #0f1115;
-      --card: #1a1d24;
-      --text: #e6e8eb;
-      --muted: #8a91a0;
-      --accent: #4f8cff;
-      --border: #262a33;
+      --bg:        #272727;
+      --surface:   #343434;
+      --text:      #FAFAFA;
+      --muted:     #C7C7C7;
+      --blue:      #03A9F4;
+      --blue-hi:   #4FC3F7;
+      --red:       #F44336;
+      --red-hi:    #FF6F60;
+      --border:    #3D3D3D;
     }
-    @media (prefers-color-scheme: light) {
-      :root {
-        --bg: #f5f6f8;
-        --card: #ffffff;
-        --text: #1a1d24;
-        --muted: #5a6270;
-        --accent: #1f6feb;
-        --border: #e1e4e8;
-      }
+    html {
+      background: var(--bg);
+      color-scheme: dark;
     }
     * { box-sizing: border-box; }
     body {
@@ -39,41 +38,89 @@
       line-height: 1.5;
       text-align: center;
     }
-    main { max-width: 420px; }
+    main {
+      position: relative;
+      max-width: 460px;
+      padding: 2.75rem 2rem 2.5rem;
+      background:
+        radial-gradient(280px 140px at 22% 20%, rgba(3, 169, 244, 0.18), transparent 70%),
+        radial-gradient(280px 140px at 78% 80%, rgba(244, 67, 54, 0.16), transparent 70%),
+        var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.55);
+      overflow: hidden;
+    }
+    main::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+      background-size: 22px 22px;
+      pointer-events: none;
+    }
+    .icon {
+      position: relative;
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      margin: 0 auto 1rem;
+      display: block;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+    }
     .code {
-      font-size: 4.5rem;
-      font-weight: 700;
+      position: relative;
+      font-size: 4.75rem;
+      font-weight: 800;
       letter-spacing: -0.04em;
-      color: var(--accent);
-      margin: 0 0 0.5rem;
+      background: linear-gradient(120deg, var(--blue), var(--red));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: var(--blue-hi);
+      margin: 0 0 0.25rem;
       line-height: 1;
     }
     h1 {
-      margin: 0 0 0.75rem;
+      position: relative;
+      margin: 0 0 0.6rem;
       font-size: 1.4rem;
+      letter-spacing: -0.01em;
     }
     p {
+      position: relative;
       margin: 0 0 2rem;
       color: var(--muted);
+      font-size: 0.95rem;
     }
     a.btn {
+      position: relative;
       display: inline-block;
       padding: 0.85rem 1.5rem;
-      background: var(--accent);
+      background: var(--blue);
       color: #fff;
       text-decoration: none;
-      border-radius: 10px;
-      font-weight: 600;
-      transition: transform 0.12s ease, opacity 0.12s ease;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      box-shadow: 0 8px 22px rgba(3, 169, 244, 0.32);
+      transition: background 0.12s ease, transform 0.12s ease, box-shadow 0.12s ease;
     }
-    a.btn:hover { transform: translateY(-1px); opacity: 0.92; }
+    a.btn:hover,
+    a.btn:focus-visible {
+      background: var(--blue-hi);
+      transform: translateY(-1px);
+      box-shadow: 0 12px 28px rgba(3, 169, 244, 0.42);
+      outline: none;
+    }
   </style>
 </head>
 <body>
 <main>
+  <img src="/touch-recorder/play_store_512.png" alt="Touch Recorder" class="icon" width="64" height="64">
   <div class="code">404</div>
   <h1>Page not found</h1>
-  <p>The page you are looking for doesn't exist or has been moved.</p>
+  <p>The page you're looking for doesn't exist or has been moved.</p>
   <a class="btn" href="/touch-recorder/">Back to Touch Recorder</a>
 </main>
 </body>
