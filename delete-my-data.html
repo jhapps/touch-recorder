@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delete my data &mdash; Touch Recorder</title>
+<link rel="stylesheet" href="legal-style.css">
+<link rel="icon" type="image/png" sizes="512x512" href="play_store_512.png">
+<link rel="apple-touch-icon" href="play_store_512.png">
+<meta name="theme-color" content="#272727">
+<meta name="color-scheme" content="dark">
+<meta name="description" content="How to delete the data Touch Recorder stores on your device and request server-side telemetry deletion.">
+<link rel="canonical" href="https://jhapps.github.io/touch-recorder/delete-my-data.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Delete my data &mdash; Touch Recorder">
+<meta property="og:description" content="In-app and email-fallback paths to delete every piece of data Touch Recorder stores on your device or sends to Firebase.">
+<meta property="og:image" content="https://jhapps.github.io/touch-recorder/touch-recorder-banner.png">
+<meta property="og:image:width" content="1080">
+<meta property="og:image:height" content="1920">
+<meta property="og:image:alt" content="Touch Recorder — Replay forever, record once. Auto-tap demo screen.">
+<meta property="og:image:type" content="image/png">
+<meta property="og:url" content="https://jhapps.github.io/touch-recorder/delete-my-data.html">
+<meta property="og:site_name" content="Touch Recorder">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Delete my data &mdash; Touch Recorder">
+<meta name="twitter:description" content="How to delete data Touch Recorder stores on your device.">
+<meta name="twitter:image" content="https://jhapps.github.io/touch-recorder/touch-recorder-banner.png">
+<meta name="twitter:image:alt" content="Touch Recorder — Replay forever, record once. Auto-tap demo screen.">
+<style>
+  /* Page-local typography aligned to legal-style.css tokens. */
+  .tr-container h1 {
+    margin: 0 0 0.4rem;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: var(--text);
+  }
+  .tr-container .tr-updated {
+    margin: 0 0 1.75rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+  .tr-container h2 {
+    margin: 2rem 0 0.75rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+    color: var(--text);
+  }
+  .tr-container h3 {
+    margin: 1.5rem 0 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .tr-container p { margin: 0 0 1rem; line-height: 1.65; color: var(--text); }
+  .tr-container ol, .tr-container ul { margin: 0 0 1rem; padding-left: 1.5rem; }
+  .tr-container li { margin-bottom: 0.4rem; line-height: 1.6; }
+  .tr-container code {
+    font-family: var(--mono);
+    font-size: 0.9em;
+    background: var(--surface-elev);
+    padding: 0.1rem 0.35rem;
+    border-radius: 4px;
+    color: var(--text);
+  }
+  .tr-container .tr-callout {
+    margin: 1.25rem 0;
+    padding: 1rem 1.1rem;
+    background: rgba(244, 67, 54, 0.08);
+    border: 1px solid rgba(244, 67, 54, 0.32);
+    border-radius: 10px;
+    color: var(--text);
+  }
+  .tr-container .tr-callout strong { color: var(--red-hi); }
+  .tr-container .tr-note {
+    margin: 1.25rem 0;
+    padding: 1rem 1.1rem;
+    background: rgba(3, 169, 244, 0.08);
+    border: 1px solid rgba(3, 169, 244, 0.32);
+    border-radius: 10px;
+    color: var(--text);
+  }
+  .tr-container .tr-note strong { color: var(--blue-hi); }
+</style>
+</head>
+<body>
+<header class="tr-navbar" role="banner">
+  <a class="tr-brand" href="index.html">
+    <img src="play_store_512.png" alt="" width="28" height="28">
+    <span><span class="tr-brand-blue">Touch</span> <span class="tr-brand-red">Recorder</span></span>
+  </a>
+  <a class="tr-back" href="index.html" aria-label="Back to home">
+    <span aria-hidden="true">&lsaquo;</span>
+    <span>Back</span>
+  </a>
+</header>
+<main class="tr-container">
+
+<h1>Delete my data</h1>
+<p class="tr-updated"><strong>Last updated:</strong> May 9, 2026</p>
+
+<p>
+  Touch Recorder is an offline utility. There is no user account, no cloud
+  database, and no server we operate that holds your recordings or settings.
+  Almost everything the app keeps about you lives on your device, and you
+  control it.
+</p>
+
+<p>
+  This page describes the two ways to delete it: an in-app button that wipes
+  every local data store and signals Google Firebase to delete server-side
+  diagnostic data, and an email fallback for cases where the in-app button is
+  unreachable.
+</p>
+
+<div class="tr-callout">
+  <strong>Heads up.</strong> Deleting your data is permanent. Recorded scripts,
+  your Premium / subscription state cached on the device, and accumulated
+  free-tier ad-grace time are all wiped. There is no undo and no cloud backup
+  to restore from &mdash; we do not operate one.
+</div>
+
+<h2>1. Delete from inside the app (recommended)</h2>
+
+<ol>
+  <li>Open <strong>Touch Recorder</strong>.</li>
+  <li>Tap the menu and open <strong>Privacy &amp; Legal</strong>.</li>
+  <li>Scroll to the <strong>Data deletion</strong> section and tap
+      <strong>Delete my data</strong>.</li>
+  <li>
+    A preflight checklist opens. Disable each of the five system permissions
+    Touch Recorder holds (the app deep-links each one to the correct Settings
+    page):
+    <ul>
+      <li>Accessibility service</li>
+      <li>Display over other apps</li>
+      <li>Device administrator</li>
+      <li>Usage access</li>
+      <li>Battery optimization (return to <em>Optimized</em>)</li>
+    </ul>
+  </li>
+  <li>Once every row reads <em>Disabled</em>, type the word
+      <code>DELETE</code> in the confirmation box and tap
+      <strong>Delete everything</strong>.</li>
+  <li>Confirm one last time on the yes/no dialog. The app then wipes
+      everything below, signals Firebase, removes itself from Recents, and
+      shuts down. There is no automatic relaunch &mdash; reopen from the
+      launcher icon if you want to use Touch Recorder again.</li>
+</ol>
+
+<div class="tr-note">
+  <strong>Why the preflight?</strong> Wiping local data while a Touch Recorder
+  service is still running would leave a half-deleted state. The checklist
+  guarantees the app is fully inert before the destructive call fires, and it
+  doubles as a guided uninstall path.
+</div>
+
+<h2>2. What gets deleted</h2>
+
+<h3>On your device (always wiped)</h3>
+<ul>
+  <li><strong>Recorded scripts</strong> &mdash; the local database holding
+      every gesture sequence you have saved.</li>
+  <li><strong>App settings</strong> &mdash; preferences such as playback
+      speed, intervals, layout choices, tutorial-completion flags, and the
+      telemetry opt-in toggle.</li>
+  <li><strong>Subscription / entitlement cache</strong> &mdash; the encrypted
+      file holding the device-side Premium / subscriber state derived from
+      Google Play Billing.</li>
+  <li><strong>Free-tier ad-grace timer</strong> &mdash; the bank of free
+      hours earned by watching ads (and the install-grant flag).</li>
+  <li><strong>Session-resume ledger</strong> &mdash; the small file used to
+      resume playback after an OEM kill or crash.</li>
+  <li><strong>Legacy entitlement file</strong> &mdash; an older unencrypted
+      copy of the same Premium-state cache, kept in the wipe list for devices
+      that never went through the encrypted-storage upgrade. Wiped if
+      present.</li>
+  <li><strong>Crashlytics breadcrumbs and unsent reports</strong> queued on
+      the device.</li>
+</ul>
+
+<h3>On Google Firebase (best-effort, requires a network connection)</h3>
+<p>
+  When the in-app button runs, Touch Recorder makes the following Firebase
+  calls before killing the process. They are awaited for up to 5 seconds so
+  the network requests actually leave the device.
+</p>
+<ul>
+  <li><strong>Crashlytics</strong> &mdash; collection disabled and any
+      undelivered crash payloads dropped.</li>
+  <li><strong>Analytics</strong> &mdash; the clearance signal is sent so
+      Firebase forgets the user-property mapping for this app instance, and
+      collection is then disabled.</li>
+  <li><strong>Firebase Installations</strong> &mdash; Google is asked to
+      remove the Firebase Installation ID (FID) bound to this install.</li>
+</ul>
+<p>
+  If you are offline at the time of deletion, the in-app flow asks you to
+  reconnect first. If a captive-portal Wi-Fi or other network failure
+  prevents the Firebase call from completing within the timeout, local data
+  is still wiped completely; orphaned server-side diagnostic records are
+  scrubbed by Google's standard 90-day retention policy.
+</p>
+
+<h2>3. What Touch Recorder does <em>not</em> store about you</h2>
+<ul>
+  <li>No user account, no email, no password &mdash; the app has no sign-in.</li>
+  <li>No cloud sync of your recordings &mdash; scripts never leave the device.</li>
+  <li>No collection of phone numbers, contacts, photos, files, microphone
+      audio, or precise (GPS) location.</li>
+  <li>No recording of the screen contents of any other app &mdash; the
+      Accessibility service is used only to inject the touches you recorded,
+      back into the screen coordinates you chose.</li>
+</ul>
+<p>
+  See the
+  <a href="privacy.html">Privacy Policy</a> for the full list of categories
+  collected by Google Play Billing, AdMob, and Firebase, all of which are
+  governed by Google's own data-deletion mechanisms (see Section 4).
+</p>
+
+<h2>4. Third-party data we cannot delete for you</h2>
+<p>
+  Some data is held by Google's services on our behalf and can only be
+  deleted through your Google account. We have no API to remove it on your
+  side.
+</p>
+<ul>
+  <li>
+    <strong>Google Play purchase history</strong> &mdash; subscriptions and
+    one-time purchases. Manage at
+    <a href="https://play.google.com/store/account/subscriptions" target="_blank" rel="noopener">play.google.com/store/account/subscriptions</a>.
+  </li>
+  <li>
+    <strong>AdMob advertising identifier (AAID)</strong> &mdash; reset or
+    delete via your device's <em>Settings &rarr; Privacy &rarr; Ads</em>
+    menu.
+  </li>
+  <li>
+    <strong>Personalised-ads consent (EEA / UK / Switzerland)</strong>
+    &mdash; change at any time from <em>Privacy &amp; Legal &rarr; Ad
+    consent preferences</em> inside the app.
+  </li>
+</ul>
+
+<h2>5. Already uninstalled?</h2>
+<p>
+  Uninstalling Touch Recorder is itself a complete deletion path for the
+  data on your device. Android removes the app's private storage during
+  uninstall, and Auto Backup is disabled, so nothing was synced to Google
+  Drive in the first place &mdash; there is no off-device copy of your
+  recordings or settings to chase.
+</p>
+<p>
+  The diagnostic records sent to Google Firebase (Crashlytics, Analytics,
+  Installations) are not tied to any account, email, or login &mdash; the
+  app has none. They expire on Google's standard retention schedule
+  (Crashlytics payloads after roughly 90 days; Analytics events after 2
+  months) and are then permanently removed without any further action from
+  you. If you need to confirm receipt of a written request, contact us via
+  Section 7 below.
+</p>
+
+<h2>6. Retention</h2>
+<p>
+  Local on-device data persists until you delete it (in-app button or
+  uninstall). Firebase Crashlytics and Analytics records age out per Google's
+  default retention (typically up to 90 days for debug payloads and up to 14
+  months for aggregated analytics) unless you delete sooner via Section 1 or
+  Section 5.
+</p>
+
+<h2>7. Contact</h2>
+<p>
+  J&amp;H Apps &mdash;
+  <a href="mailto:jhapps.touchrepeat@gmail.com">jhapps.touchrepeat@gmail.com</a>
+</p>
+
+</main>
+<footer class="tr-footer" role="contentinfo">
+  <nav class="tr-footer-links" aria-label="Footer">
+    <a href="index.html">Home</a>
+    <span class="tr-footer-sep" aria-hidden="true">&middot;</span>
+    <a href="privacy.html">Privacy Policy</a>
+    <span class="tr-footer-sep" aria-hidden="true">&middot;</span>
+    <a href="terms.html">Terms of Service</a>
+    <span class="tr-footer-sep" aria-hidden="true">&middot;</span>
+    <a href="delete-my-data.html">Delete my data</a>
+    <span class="tr-footer-sep" aria-hidden="true">&middot;</span>
+    <a href="mailto:jhapps.touchrepeat@gmail.com">Contact</a>
+    <span class="tr-footer-sep" aria-hidden="true">&middot;</span>
+    <a href="https://play.google.com/store/apps/details?id=com.jhapps.touchrepeat" target="_blank" rel="noopener">Google Play</a>
+  </nav>
+  <div class="tr-footer-copy">&copy; <span id="tr-year">2026</span> J&amp;H Apps. All rights reserved.</div>
+</footer>
+<script>document.getElementById("tr-year").textContent=new Date().getFullYear();</script>
+</body>
+</html>
